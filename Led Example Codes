@@ -1,0 +1,47 @@
+/// BASIC LIGHTING UP /////
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(9, OUTPUT);
+  digitalWrite(9, HIGH);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+
+//// SHOWCASE Setup Effect /////
+
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(9, OUTPUT);
+  digitalWrite(9, HIGH);
+  delay(1000);
+  digitalWrite(9,LOW);
+  delay(1000);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+
+//// Show case Loop Effect ////
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(9, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(9, HIGH);
+  delay(1000);
+  digitalWrite(9,LOW);
+
+}
+
+
+///
