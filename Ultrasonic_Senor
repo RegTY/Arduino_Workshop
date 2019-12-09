@@ -1,0 +1,53 @@
+/////////////// BASIC CODE SHOWCASING PULSEIN FUNCTION /////////////////
+int trig = 9;
+int echo = 7;
+float timetaken;
+void setup() {
+  pinMode(echo , INPUT);
+  pinMode(trig, OUTPUT);
+
+  Serial.begin(9600);
+  
+}
+
+void loop() { 
+  digitalWrite(trig, LOW);
+  delay(100);
+  digitalWrite(trig, 1);
+  delay(100);
+  digitalWrite(trig, LOW);
+  timetaken = pulseIn(echo, HIGH);
+  Serial.println(timetaken);
+  delay(300);
+}
+
+/////////////////////////// BASIC CODE SHOWCASING PHYSICS AND MATH //////////////////
+
+
+
+int trig = 9;
+int echo = 7;
+float distance;
+float timetaken;
+void setup() {
+  pinMode(echo , INPUT);
+  pinMode(trig, OUTPUT);
+
+  Serial.begin(9600);
+  
+}
+
+void loop() { 
+  digitalWrite(trig, LOW);
+  delay(100);
+  digitalWrite(trig, 1);
+  delay(100);
+  digitalWrite(trig, LOW);
+  timetaken = pulseIn(echo, HIGH);
+  distance = 340*(timetaken / 1000000)/2*100;
+  
+  //Serial.println(timetaken);
+  Serial.println(distance);
+  delay(300);
+}
+///////////////////////////////////////////////
