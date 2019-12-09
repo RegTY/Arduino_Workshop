@@ -1,0 +1,60 @@
+int trig = 9;
+int echo = 10;
+long timeTaken;
+int distance;
+int buzzer = 12;
+int led = 11;
+
+int brightness = 0;    // how bright the LED is
+int fadeAmount = 10;      // Amount of points to light/dark in LED;
+
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(trig, OUTPUT);
+pinMode(echo, INPUT);
+Serial.begin(9600);
+pinMode(buzzer, OUTPUT);
+pinMode(led, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(trig, LOW);
+delay(10);
+digitalWrite(trig, HIGH);
+delay(10);
+digitalWrite(trig, LOW);
+
+timeTaken = pulseIn(echo, HIGH);
+distance = timeTaken*0.034/2;
+
+//Serial.println(echoo);
+Serial.println(distance);
+
+if (distance < 10){
+
+  brightness = brightness + fadeAmount;
+  analogWrite(led, brightness);
+
+  
+  Serial.println("buzzer Activated");
+  tone(buzzer, 450);
+  delay(100);
+  noTone(buzzer);
+  delay(100);
+  
+  if (brightness == 0 || brightness == 255){
+    fadeAmount = -fadeAmount;
+    
+    }
+}else {
+  brightness = 0;
+  fadeAmount = 51;
+  digitalWrite(led, LOW);
+  noTone(buzzer);
+  Serial.println("buzzer not Activiated");
+  }
+
+
+}
