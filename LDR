@@ -1,0 +1,36 @@
+////////////////// BASIC LDR ////////////////////////
+
+int ldr = A0;
+void setup() {
+  pinMode(ldr , INPUT);
+
+  Serial.begin(9600);
+  
+}
+
+void loop() { 
+  Serial.println(analogRead(ldr));
+  delay(300);
+}
+
+////////////////// BASIC LDR with LED ////////////////////////
+
+
+int ldr = A0;
+int led = 9;
+void setup() {
+  pinMode(ldr , INPUT);
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  if (analogRead(ldr) < 40) {
+    digitalWrite(led, HIGH);
+  }
+  else
+    digitalWrite(led, LOW);
+  Serial.println(analogRead(ldr));
+  delay(300);
+}
