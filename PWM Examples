@@ -1,4 +1,4 @@
-/// Basic Example Showing Analogue Outputs of LED with PWM pins ///
+/// Basic Example Showing Analogue Outputs by changing manually///
 
 int led = 9;
 
@@ -19,7 +19,7 @@ void loop() {
 }
 
 
-/// Basic Example Showing Analogue Outputs of LED with analogue pins ///
+/// Basic Example Showing Analogue Outputs by using void loop s ///
 
 int led = 9;
 int brightness = 0;
@@ -37,4 +37,48 @@ void loop() {
 
 
 /// Basic Fading effect using void Loop to loop brightness ///
+
+int led = 9;
+int brightness = 0;
+void setup() {
+  pinMode(led, OUTPUT);
+
+}
+
+void loop() {
+  for (brightness = 0; brightness <256; brightness += 10){
+        analogWrite(led,brightness);
+        delay(50);
+    }
+  for (brightness = 255; brightness > 0 ; brightness -=10){
+        analogWrite(led,brightness);
+        delay(50);
+    
+    }
+
+}
+
+//////////////// OR ////////////////
+
+int led = 9;
+int brightness = 0;
+int increments = 5;
+void setup() {
+  pinMode(led, OUTPUT);
+
+}
+
+void loop() {
+  for (brightness = 0; brightness <256; brightness += increments){
+        analogWrite(led,brightness);
+        delay(50);
+    }
+  for (brightness = 255; brightness > 0 ; brightness -= increments){
+        analogWrite(led,brightness);
+        delay(50);
+    
+    }
+
+}
+
 
