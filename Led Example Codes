@@ -44,4 +44,53 @@ void loop() {
 }
 
 
-///
+/// ARRAY LED ////
+void setup()
+{
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+  pinMode(9, OUTPUT);
+}
+
+void loop()
+{
+  // turn the LED on (HIGH is the voltage level)
+  digitalWrite(13, LOW);
+  digitalWrite(9, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  // turn the LED off by making the voltage LOW
+  digitalWrite(9, LOW);
+  digitalWrite(12, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(12, LOW);
+  digitalWrite(13, HIGH);
+  delay(1000);
+}
+
+
+/// LOOPS WITH ARRAYS ///
+/*
+  This program blinks pin 13 of the Arduino (the
+  built-in LED)
+*/
+int led[] = {13,12,9};
+
+void setup()
+{
+  for (int i = 0; i<3 ; i++){
+    pinMode(led[i], OUTPUT);
+  }
+}
+
+void loop()
+{
+
+  for (int i = 0 ; i<3 ; i++){
+  	digitalWrite(led[i], HIGH);
+    delay(1000);
+    digitalWrite(led[i], LOW);
+    delay(1000);
+
+  }
+  
+}
