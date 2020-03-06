@@ -44,7 +44,7 @@ void loop() {
   delay(100);
   digitalWrite(trig, LOW);
   timetaken = pulseIn(echo, HIGH);
-  distance = 340*(timetaken / 1000000)/2*100;   // to get the ans in centimeers converting from meters 
+  distance = 340*(timetaken /10000)/2;   // to get the ans in centimeers converting from meters 
   
   //Serial.println(timetaken);
   Serial.println(distance);
