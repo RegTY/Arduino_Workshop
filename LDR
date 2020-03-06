@@ -13,6 +13,21 @@ void loop() {
   delay(300);
 }
 
+
+
+int ldr = A0;
+void setup() {
+  pinMode(ldr , INPUT);
+
+  Serial.begin(9600);
+  
+}
+
+void loop() { 
+  float digital = analogRead(ldr);
+  Serial.println(digital *(5.0/1023.0));
+  delay(300);
+}
 ////////////////// BASIC LDR with LED ////////////////////////
 
 
