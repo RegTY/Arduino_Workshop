@@ -34,3 +34,33 @@ void loop() {
   Serial.println(analogRead(ldr));
   delay(300);
 }
+////////////////////
+
+int ldr = A0;
+int led1 = 9;
+int led2 = 6;
+void setup() {
+  pinMode(ldr , INPUT);
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  if (analogRead(ldr) < 40) {
+    light1();
+  }
+  else
+	light2();
+}
+
+void light1(){
+	digitalWrite(led1, HIGH);
+  	digitalWrite(led2, LOW);
+}
+
+void light2(){
+	digitalWrite(led2, HIGH);
+    digitalWrite(led1, LOW);
+}
