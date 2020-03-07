@@ -13,6 +13,9 @@ void loop() {
   delay(300);
 }
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 /////////// MEASURING VOLTAGE WITH LDR /////////
 
 int ldr = A0;
@@ -28,6 +31,9 @@ void loop() {
   Serial.println(digital *(5.0/1023.0)); // Gives voltage between GND and AO
   delay(300);
 }
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ////////////////// BASIC LDR with LED ////////////////////////
 
 
@@ -46,9 +52,11 @@ void loop() {
   }
   else
     digitalWrite(led, LOW);
-  Serial.println(analogRead(ldr));
-  delay(300);
+    Serial.println(analogRead(ldr));
+    delay(300);
 }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //////////////////// LDR USING FUNCTIONS /////////
 
 int ldr = A0;
@@ -79,3 +87,4 @@ void light2(){
 	digitalWrite(led2, HIGH);
 	digitalWrite(led1, LOW);
 }
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
