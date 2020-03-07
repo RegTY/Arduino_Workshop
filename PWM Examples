@@ -1,3 +1,5 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 /// Basic Example Showing Analogue Outputs by changing manually///
 
 int led = 9;
@@ -18,24 +20,7 @@ void loop() {
   delay(500);
 }
 
-
-/// Basic Example Showing Analogue Outputs by using void loop s ///
-
-int led = 9;
-int brightness = 0;
-void setup() {
-  pinMode(led, OUTPUT);
-
-}
-
-void loop() {
-  analogWrite(led,brightness);
-  brightness += 10;
-  delay(50);
-  
-}
-
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /// Basic Fading effect using void Loop to loop brightness ///
 
 int led = 9;
@@ -58,11 +43,14 @@ void loop() {
 
 }
 
-//////////////// OR ////////////////
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//////////////// Same as above but you can change the increment by changing the increment line ////////////////
 
 int led = 9;
 int brightness = 0;
-int increments = 5;
+int increments = 5; // put your incrementer value
+int slowtime = 100; // Put your delay time here
 void setup() {
   pinMode(led, OUTPUT);
 
@@ -71,14 +59,39 @@ void setup() {
 void loop() {
   for (brightness = 0; brightness <256; brightness += increments){
         analogWrite(led,brightness);
-        delay(50);
+        delay(slowtime);
     }
   for (brightness = 255; brightness > 0 ; brightness -= increments){
         analogWrite(led,brightness);
-        delay(50);
+        delay(slowtime);
     
     }
 
 }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+int led = 9;
+int brightness = 0;
+int increments = 5; // put your incrementer value
+int slowtime = 100; // Put your delay time here
+void setup() {
+  pinMode(led, OUTPUT);
+
+}
+
+void loop() {
+  for (brightness = 0; brightness <256; brightness += increments){
+        analogWrite(led,brightness);
+        delay(slowtime);
+    }
+  for (brightness = 255; brightness > 0 ; brightness -= increments){
+        analogWrite(led,brightness);
+        delay(slowtime);
+    
+    }
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
