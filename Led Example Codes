@@ -1,11 +1,14 @@
 /// BASIC LIGHTING UP /////
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/// Setup Effect of code running One /////
 void setup() {
   // put your setup code here, to run once:
   pinMode(9, OUTPUT);
   digitalWrite(9, HIGH);
   delay(1000)
   digitalWrite(9, LOW);
+  delay(1000)
 }
 
 void loop() {
@@ -13,24 +16,9 @@ void loop() {
 
 }
 
-//// SHOWCASE Setup Effect /////
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-void setup() {
-  // put your setup code here, to run once:
-  pinMode(9, OUTPUT);
-  digitalWrite(9, HIGH);
-  delay(1000);
-  digitalWrite(9,LOW);
-  delay(1000);
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
-}
-
-//// Show case Loop Effect ////
+//// Led Looping due to void loop////
 
 void setup() {
   // put your setup code here, to run once:
@@ -46,7 +34,10 @@ void loop() {
 }
 
 
-/// ARRAY LED ////
+/// ARRAY LED refer to slide for connection ////
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/// Making LED Array (long way without loop ) ////
 void setup()
 {
   pinMode(12, OUTPUT);
@@ -56,25 +47,20 @@ void setup()
 
 void loop()
 {
-  // turn the LED on (HIGH is the voltage level)
   digitalWrite(13, LOW);
   digitalWrite(9, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  // turn the LED off by making the voltage LOW
+  delay(1000);
   digitalWrite(9, LOW);
   digitalWrite(12, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000);
   digitalWrite(12, LOW);
   digitalWrite(13, HIGH);
   delay(1000);
 }
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+/// Making LED array ( short Way using loops)///
 
-/// LOOPS WITH ARRAYS ///
-/*
-  This program blinks pin 13 of the Arduino (the
-  built-in LED)
-*/
 int led[] = {13,12,9};
 
 void setup()
@@ -96,3 +82,4 @@ void loop()
   }
   
 }
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
